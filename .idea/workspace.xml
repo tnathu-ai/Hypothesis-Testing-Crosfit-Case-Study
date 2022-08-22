@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7da44419-e149-40dd-8103-afe0a220a882" name="Changes" comment="drop cols">
+      <change afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W4/in_class_coding_exercise/draft.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W4/test-preparation/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Crazy-Crossfit.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/demo_normality_test.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/draft.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/normality_test.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/statistical_methods.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W2/Act_1 Introduction to Regular expressions.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W2/Act_1 Introduction to Regular expressions.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W2/Exe 1_Regular Expression_withAnswers.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W2/Exe 1_Regular Expression_withAnswers.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W3/Act_2 Parsing Dates.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W3/Act_2 Parsing Dates.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W3/LTL week 3 Demo.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W3/LTL week 3 Demo.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W3/Week3_Exe1_RegularExpression_Advanced/Exe 1_Regular Expression (Advanced).ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W3/Week3_Exe1_RegularExpression_Advanced/Exe 1_Regular Expression (Advanced).ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/notebooks/Assignment3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/notebooks/Assignment3.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/notebooks/MultipleClassificationModels.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/notebooks/MultipleClassificationModels.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/EDA.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/EDA.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/preprocessing.ipynb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2CsgGyVwwNlBYii6RGE9Rc3r5TK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tnathu-ai/DataspellProjects/Crazy-Crossfit/notebooks&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/notebooks" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added preprocessing file" />
+    <MESSAGE value="added EDA steps" />
+    <MESSAGE value="drop cols" />
+    <option name="LAST_COMMIT_MESSAGE" value="drop cols" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook:///Users/tnathu-ai/DataspellProjects/Crazy-Crossfit/notebooks/EDA.ipynb</url>
+          <line>107</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook:///Users/tnathu-ai/DataspellProjects/Crazy-Crossfit/notebooks/EDA.ipynb</url>
+          <line>157</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

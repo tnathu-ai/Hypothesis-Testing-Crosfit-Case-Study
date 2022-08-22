@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../30-days-master-Python/.idea/30-days-master-Python.iml" filepath="$PROJECT_DIR$/../30-days-master-Python/.idea/30-days-master-Python.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/.idea/Classify-House-Price-Ranges-Hanoi.iml" filepath="$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/.idea/Classify-House-Price-Ranges-Hanoi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Crazy-Crossfit.iml" filepath="$PROJECT_DIR$/.idea/Crazy-Crossfit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../CrossfitRankings/.idea/CrossfitRankings.iml" filepath="$PROJECT_DIR$/../CrossfitRankings/.idea/CrossfitRankings.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/prac data science assignment/.idea/prac data science assignment.iml" filepath="$USER_HOME$/Downloads/prac data science assignment/.idea/prac data science assignment.iml" />
+    </modules>
+  </component>
+</project>
