@@ -26,4 +26,16 @@ coerce_df_columns_to_best_dtype(df, ['Id','Salary'], ['OpenDate', 'CloseDate'])
 # female weight variance
 
 
+# generate a boxplot to see the data distribution by treatments. Using boxplot, we can
+# easily detect the differences between different treatments
+import matplotlib.pyplot as plt
+import seaborn as sns
+ax = sns.boxplot(x='region', y='score', data=df, color='#99c2a2')
+ax = sns.swarmplot(x="region", y="score", data=df, color='#7d0013')
+# set with and height of the figure
+plt.figure(figsize=(10,8))
+# set title with matplotlib
+plt.title('Distribution of scores by region')
+plt.show()
+
 
