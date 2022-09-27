@@ -5,36 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7da44419-e149-40dd-8103-afe0a220a882" name="Changes" comment="drop cols">
-      <change afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W4/in_class_coding_exercise/draft.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W4/test-preparation/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Crazy-Crossfit.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/demo_normality_test.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/draft.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/normality_test.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/statistical_methods.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W2/Act_1 Introduction to Regular expressions.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W2/Act_1 Introduction to Regular expressions.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W2/Exe 1_Regular Expression_withAnswers.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W2/Exe 1_Regular Expression_withAnswers.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W3/Act_2 Parsing Dates.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W3/Act_2 Parsing Dates.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W3/LTL week 3 Demo.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W3/LTL week 3 Demo.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W3/Week3_Exe1_RegularExpression_Advanced/Exe 1_Regular Expression (Advanced).ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W3/Week3_Exe1_RegularExpression_Advanced/Exe 1_Regular Expression (Advanced).ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W7/Week7_Ex1_PreprocessingMovieReviewData/draft.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W8/Week8_Exe1_Sentiment analysis/draft.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/quiz_2.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NLP-Movie-Review-Data/title.txt" afterDir="false" />
+      <change afterPath="$USER_HOME$/R_Data_Wrangling/.idea/R_Data_Wrangling.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/notebooks/Assignment3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/notebooks/Assignment3.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/notebooks/MultipleClassificationModels.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/notebooks/MultipleClassificationModels.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Crazy-Crossfit.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Crazy-Crossfit.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/external/athletes.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/external/leaderboard_15.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/notebooks/EDA.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/EDA.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/draft.py" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/draft.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/heatmap to indicates correlation between variables.png" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/heatmap to indicates correlation between variables.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/normality_test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/normality_test.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notebooks/preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/preprocessing.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NLP-Job_Ad/task1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../NLP-Job_Ad/task1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NLP-Job_Ad/task2_3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../NLP-Job_Ad/task2_3.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NLP-Movie-Review-Data/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../NLP-Movie-Review-Data/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NLP-Movie-Review-Data/task1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../NLP-Movie-Review-Data/task1.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NLP-Movie-Review-Data/task1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../NLP-Movie-Review-Data/task1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NLP-Movie-Review-Data/task2_3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../NLP-Movie-Review-Data/task2_3.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NLP-Movie-Review-Data/task2_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/../NLP-Movie-Review-Data/task2_3.py" afterDir="false" />
+      <change beforePath="$USER_HOME$/R-practical-guide/.gitignore" beforeDir="false" afterPath="$USER_HOME$/R-practical-guide/.gitignore" afterDir="false" />
+      <change beforePath="$USER_HOME$/R-practical-guide/1_mutating_or_filtering_join/test.Rmd" beforeDir="false" afterPath="$USER_HOME$/R-practical-guide/1_mutating_or_filtering_join/test.Rmd" afterDir="false" />
+      <change beforePath="$USER_HOME$/R-practical-guide/1_mutating_or_filtering_join/test.nb.html" beforeDir="false" afterPath="$USER_HOME$/R-practical-guide/1_mutating_or_filtering_join/test.nb.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jupyter Notebook" />
+        <option value="R Script" />
         <option value="Python Script" />
       </list>
     </option>
@@ -44,6 +59,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2CsgGyVwwNlBYii6RGE9Rc3r5TK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -57,14 +75,23 @@
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/tnathu-ai/DataspellProjects/Crazy-Crossfit/notebooks&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable&quot;
+    &quot;last_opened_file_path&quot;: &quot;/Users/tnathu-ai/R-practical-guide/2_mutating_or_filtering_join&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/R-practical-guide/2_mutating_or_filtering_join" />
+      <recent name="$USER_HOME$/R-practical-guide/learning_milestones" />
+      <recent name="$USER_HOME$/R-practical-guide/data_preprocessing" />
+      <recent name="$USER_HOME$/R-practical-guide/mutating_or_filtering_join" />
       <recent name="$PROJECT_DIR$/notebooks" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W8/Week8_Exe1_Sentiment analysis" />
+      <recent name="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W4/Week4_Exe 2_Parsing Melbourne Bike Share XML Data" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -90,13 +117,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>notebook:///Users/tnathu-ai/DataspellProjects/Crazy-Crossfit/notebooks/EDA.ipynb</url>
-          <line>107</line>
+          <line>112</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>notebook:///Users/tnathu-ai/DataspellProjects/Crazy-Crossfit/notebooks/EDA.ipynb</url>
-          <line>157</line>
+          <line>152</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook:///Users/tnathu-ai/DataspellProjects/30-days-master-Python/Advance Programming for Data Science/assignment_1/s3879312/s3879312_task1_2.ipynb</url>
+          <line>126</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook:///Users/tnathu-ai/Downloads/S3891013/S3891013-A2-Classification.ipynb</url>
+          <line>31</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook:///Users/tnathu-ai/DataspellProjects/Practical Data Science/W6/week6/Week6.ipynb</url>
+          <line>402</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
+          <url>notebook:///Users/tnathu-ai/Downloads/S3891013/S3891013-A2-Classification.ipynb</url>
+          <line>42</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
