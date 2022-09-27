@@ -7,15 +7,13 @@
     <list default="true" id="7da44419-e149-40dd-8103-afe0a220a882" name="Changes" comment="drop cols">
       <change afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W7/Week7_Ex1_PreprocessingMovieReviewData/draft.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../30-days-master-Python/Advance Programming for Data Science/W8/Week8_Exe1_Sentiment analysis/draft.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/quiz_3.ipynb" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../NLP-Movie-Review-Data/title.txt" afterDir="false" />
       <change afterPath="$USER_HOME$/R_Data_Wrangling/.idea/R_Data_Wrangling.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/notebooks/Assignment3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/notebooks/Assignment3.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/notebooks/MultipleClassificationModels.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Classify-House-Price-Ranges-Hanoi/notebooks/MultipleClassificationModels.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/draft.py" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/draft.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/normality_test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/normality_test.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/quiz_2.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/quiz_2.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/quiz_3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/quiz_3.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/quiz_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/quiz_3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CrossfitRankings/.idea/CrossfitRankings.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../CrossfitRankings/.idea/CrossfitRankings.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NLP-Job_Ad/task1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../NLP-Job_Ad/task1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NLP-Job_Ad/task2_3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../NLP-Job_Ad/task2_3.ipynb" afterDir="false" />
