@@ -66,7 +66,7 @@
 # + Fail to Reject H0: Sample distributions are equal.
 # + Reject H0: Sample distributions are not equal.
 
-# In[39]:
+# In[2]:
 
 
 # Wilcoxon signed-rank test
@@ -151,7 +151,7 @@ else:
 # + Choose X²(0.1,7) in the table
 # 
 
-# In[41]:
+# In[3]:
 
 
 # Find the Chi-Square Critical Value
@@ -165,7 +165,7 @@ scipy.stats.chi2.ppf(1-.1, df=7) #12.0170
 # + From the tables we see that the area reported is always the area to the right of the specified value.
 # + So the boundary for the lower tail is found by looking up to X²(0.9,7) in the table
 
-# In[42]:
+# In[4]:
 
 
 # Find the Chi-Square Critical Value
@@ -181,7 +181,7 @@ scipy.stats.chi2.ppf(.1, df=7) # 2.83311
 # + The critical X² value for the upper tail, where the area of the tail is 0.025 (&alpha;=0.025) and &nu;=24. So we look up X²(0.025,24) in the table
 # + The critical X² value for the lower tail, where the area of the tail is 1-0.025 (&alpha;=0.975) and &nu;=24. So we look up X²(0.975,24) in the table
 
-# In[53]:
+# In[5]:
 
 
 # find Chi-Square critical value for 2 tail hypothesis tests
@@ -193,13 +193,13 @@ print(f'The critical value X²U for the upper tail is {scipy.stats.chi2.ppf(1-al
 print(f'The critical value X²L for the lower tail is {scipy.stats.chi2.ppf(alpha, df=df)}') # 12.4011
 
 
-# In[52]:
+# In[6]:
 
 
 # find Chi-Square critical value for 2 tail hypothesis tests
 alpha = 0.05
 
-df = 28
+df = 2
 # X² for upper tail
 print(f'The critical value X²U for the upper tail is {scipy.stats.chi2.ppf(1-alpha, df=df)}') # 39.3641
 # X² for lower tail
