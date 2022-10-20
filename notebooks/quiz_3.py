@@ -1,31 +1,36 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# + One way Analysis of Variance (ANOVA) -  learnt in Week 7
+# + Kruskal Wallis test - learnt in Week 8
+# + Chi Square Goodness of Fit test - learnt in Week 9/10
+# + Chi Square Tests for Independence / Association Test - learnt in Week 9/10
+
 # In[1]:
 
 
 # import libraries
 get_ipython().system('pip install researchpy')
 import os
+
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import researchpy as rp
 from scipy.stats import stats
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 
 
 # In[36]:
 
 
 # set the general path of the external df
-external_df_path = os.path.join(os.path.pardir,'data','interim')
+external_df_path = os.path.join(os.path.pardir, 'data', 'interim')
 
 # set the path for specific dfset from external dfset
 df = os.path.join(external_df_path, 'cleaned_data.csv')
 
 # import dfset
-df = pd.read_csv(df, delimiter=',', skipinitialspace = True)
+df = pd.read_csv(df, delimiter=',', skipinitialspace=True)
 
 # convert columns to the best possible dtypes, object->string
 df = df.convert_dtypes()
@@ -35,7 +40,6 @@ df_numeric = df.select_dtypes(include=[np.number]).columns.to_list()
 
 # select non-numeric columns
 df_string = df.select_dtypes(include='string').columns.tolist()
-
 
 print("Numeric columns: ", df_numeric, "\n")
 print("String columns: ", df_string, "\n\n")
@@ -65,20 +69,20 @@ df.head(3)
 
 data = [*[df['score'][df['region'] == region] for region in df.region.unique()]]
 
-fig = plt.figure(figsize= (30, 15))
+fig = plt.figure(figsize=(30, 15))
 ax = fig.add_subplot(111)
-ax.set_title("Box Plot of Score by Regions", fontsize= 40)
+ax.set_title("Box Plot of Score by Regions", fontsize=40)
 ax.set
 
 ax.boxplot(data,
-           labels= [region for region in df.region.unique()],
-           showmeans= True)
+           labels=[region for region in df.region.unique()],
+           showmeans=True)
 
-plt.xlabel("Regions", fontsize= 30)
-plt.ylabel("Score", fontsize= 30)
+plt.xlabel("Regions", fontsize=30)
+plt.ylabel("Score", fontsize=30)
 # bolden the labels
-plt.xticks(fontweight= 'bold')
-plt.yticks(fontweight= 'bold')
+plt.xticks(fontweight='bold')
+plt.yticks(fontweight='bold')
 
 plt.show()
 
@@ -116,6 +120,14 @@ plt.show()
 # 
 # ## Questions?
 # + Imbalance label problem (unequal sample size for each group) data
+# 
+# 
+# | **ANOVA Source** | **df** | **SS** | **MS**          | **F**    | **Notes**           |
+# |:----------------:|:------:|:------:|:---------------:|:--------:|:-------------------:|
+# | **Treatments**   |  k-1   | SSTr   | MSTr=SSTr/(k-1) | MSTr/MSE | k: number of groups |
+# | **Errors**       |  n-k   | SSE    | MSE=SSE/(n-k)   |          | n: sample size      |
+# | **Total**        |  n-1   | SST    |                 |          |                     |
+# 
 
 # In[5]:
 
@@ -124,8 +136,9 @@ plt.show()
 # easily detect the differences between different regions
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 # set with and height of the figure
-plt.figure(figsize=(24,8))
+plt.figure(figsize=(24, 8))
 ax = sns.boxplot(x='region', y='score', data=df, color='#99c2a2')
 ax = sns.swarmplot(x="region", y="score", data=df, color='#7d0013')
 # set title with matplotlib
@@ -142,7 +155,7 @@ rp.summary_cont(df['score'])
 # In[7]:
 
 
-df['score'] = np.array(df['score'],dtype='float64')
+df['score'] = np.array(df['score'], dtype='float64')
 
 rp.summary_cont(df['score'].groupby(df['region']))
 
@@ -196,18 +209,19 @@ stats.f_oneway(*[df['score'][df['region'] == region] for region in df.region.uni
 
 
 import scipy.stats
+
 # F0.05,2,12 = 3.89
 # number of values in all groups
 n = 31
 # number of groups
 k = 7
 # significance level
-q = 1-.05
+q = 1 - .05
 # numerator degrees of freedom
-dfn = k-1
+dfn = k - 1
 print(dfn)
 # denominator degrees of freedom
-dfd = n-k
+dfd = n - k
 print(dfd)
 #find F critical value
 print(f'F critical value: {scipy.stats.f.ppf(q=q, dfn=dfn, dfd=dfd)}')
@@ -217,8 +231,8 @@ print(f'F critical value: {scipy.stats.f.ppf(q=q, dfn=dfn, dfd=dfd)}')
 
 
 import scipy.stats
-# F0.05,2,12 = 3.89
 
+# F0.05,2,12 = 3.89
 
 
 performance1 = [8, 9, 11, 10, 11, 9, 10, 10]
@@ -230,11 +244,11 @@ n = len(performance1) + len(performance2) + len(performance3)
 # number of groups
 k = 3
 # significance level
-q = 1-.05
+q = 1 - .05
 # numerator degrees of freedom
-dfn = k-1
+dfn = k - 1
 # denominator degrees of freedom
-dfd = n-k
+dfd = n - k
 #find F critical value
 print(f'F critical value: {scipy.stats.f.ppf(q=q, dfn=dfn, dfd=dfd)}')
 
@@ -279,13 +293,14 @@ f_oneway(performance1, performance2, performance3)
 
 # Find the Chi-Square Critical Value
 import scipy.stats
+
 # find Chi-Square critical value for 2 tail hypothesis tests
 alpha = float(0.01)
 k = 4
-degree_freedom = k-1
-print(f'degrees of freedom: {(k-1)}')
+degree_freedom = k - 1
+print(f'degrees of freedom: {(k - 1)}')
 # X² for upper tail
-print(f'The critical value X²U for the upper tail is {scipy.stats.chi2.ppf(1-alpha, df=degree_freedom)}')
+print(f'The critical value X²U for the upper tail is {scipy.stats.chi2.ppf(1 - alpha, df=degree_freedom)}')
 
 
 # In[10]:
@@ -301,16 +316,16 @@ print(result)
 # In[55]:
 
 
-group1 = [624, 680, 454, 510, 539]
-group2 = [425, 595, 737, 459, 709, 482]
-group3 = [397, 794, 595, 539, 680, 652]
-group4 = [482, 510, 369, 567, 595]
-
-
-from scipy import stats
-
-#perform Kruskal-Wallis Test
-stats.kruskal(group1, group2, group3, group4)
+# group1 = [624, 680, 454, 510, 539]
+# group2 = [425, 595, 737, 459, 709, 482]
+# group3 = [397, 794, 595, 539, 680, 652]
+# group4 = [482, 510, 369, 567, 595]
+#
+#
+# from scipy import stats
+#
+# #perform Kruskal-Wallis Test
+# stats.kruskal(group1, group2, group3, group4)
 
 
 # <h1 style="color:#ffc0cb;font-size:40px;font-family:Georgia;text-align:center;"><strong>Chi Square Goodness of Fit test</strong></h1>
@@ -357,7 +372,7 @@ stats.chisquare(f_obs=observed, f_exp=expected)
 
 # importing packages
 import scipy.stats as stats
-import numpy as np
+
 # n = 168
 # p1=0.35
 # p2=0.35
@@ -365,9 +380,9 @@ import numpy as np
 # p4=0.1
 # no of hours a student studies
 # in a week vs expected no of hours
-observed = [27,31,25,17]
+observed = [27, 31, 25, 17]
 # expected = [p1*n, p2*n, p3*n, p4*n]
-expected = [15,21,25,39]
+expected = [15, 21, 25, 39]
 
 degree_freedom = int(len(observed) - 1)
 alpha = float(0.01)
@@ -382,9 +397,8 @@ print('chi_square_test_statistic is : ' +
       str(chi_square_test_statistic))
 print('p_value : ' + str(p_value))
 
-
 # find Chi-Square critical value
-print(stats.chi2.ppf(1-alpha, df=degree_freedom))
+print(stats.chi2.ppf(1 - alpha, df=degree_freedom))
 
 
 # In[ ]:
@@ -412,6 +426,7 @@ print(stats.chi2.ppf(1-alpha, df=degree_freedom))
 
 # Find the Chi-Square Critical Value
 import scipy.stats
+
 # find Chi-Square critical value for 2 tail hypothesis tests
 alpha = float(0.05)
 rows = 2
@@ -419,7 +434,7 @@ cols = 5
 degree_freedom = (rows - 1) * (cols - 1)
 print(f'degrees of freedom: {(rows - 1) * (cols - 1)}')
 # X² for upper tail
-print(f'The critical value X²U for the upper tail is {scipy.stats.chi2.ppf(1-alpha, df=degree_freedom)}')
+print(f'The critical value X²U for the upper tail is {scipy.stats.chi2.ppf(1 - alpha, df=degree_freedom)}')
 
 
 # In[14]:
@@ -443,9 +458,9 @@ stats.chi2_contingency(crosstab)
 
 
 crosstab, test_results, expected = rp.crosstab(df["region"], df["gender"],
-                                               test= "chi-square",
-                                               expected_freqs= True,
-                                               prop= "cell")
+                                               test="chi-square",
+                                               expected_freqs=True,
+                                               prop="cell")
 
 crosstab
 
@@ -475,8 +490,8 @@ expected
 # In[65]:
 
 
-table = [[95,55],
-        [103,247]]
+table = [[95, 55],
+         [103, 247]]
 
 table
 
@@ -487,6 +502,7 @@ table
 # chi-squared test with similar proportions
 from scipy.stats import chi2_contingency
 from scipy.stats import chi2
+
 # contingency table
 table = table
 print(table)
@@ -537,6 +553,7 @@ else:
 
 # The .py format of the jupyter notebook
 import os
+
 for fname in os.listdir():
     if fname.endswith('ipynb'):
         os.system(f'jupyter nbconvert {fname} --to python')

@@ -304,6 +304,16 @@ df.to_csv(write_interim_path, index=False)
 print("Cleaned data was successfully saved!")
 
 
+# In[1]:
+
+
+# The .py format of the jupyter notebook
+import os
+for fname in os.listdir():
+    if fname.endswith('.ipynb'):
+        os.system(f'jupyter nbconvert {fname} --to script')
+
+
 # <a id="5"></a>
 # <h1 style="color:#ffc0cb;font-size:40px;font-family:Georgia;text-align:center;"><strong>Summary</strong></h1>
 # 

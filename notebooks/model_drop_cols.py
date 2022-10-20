@@ -126,8 +126,11 @@ df.head(3)
 # In[4]:
 
 
+# drop unique id
 df = df.drop('athlete_id',axis=1)
-# drop high colin
+# drop multicolinerality
+# Drop non-needed columns
+df = df.drop(['retrieved_datetime_x', 'retrieved_datetime_y', 'year', 'stage', 'scaled', 'howlong'], axis=1)
 # select numeric columns
 df = df.select_dtypes(include=[np.number])
 df.sample(3)

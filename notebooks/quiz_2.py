@@ -2,7 +2,6 @@
 # coding: utf-8
 
 # + Comparing Two Population Proportions
-# # Nonparametric Statistical Significance Tests
 # + Confidence Interval for the Difference of two Proportions
 # + Hypothesis Test for the Difference of two Proportions
 # + Better Method for Computing Standard Deviation when H0: p_1=p_2
