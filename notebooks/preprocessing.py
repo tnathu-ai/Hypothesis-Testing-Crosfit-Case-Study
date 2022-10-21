@@ -304,7 +304,7 @@ df.to_csv(write_interim_path, index=False)
 print("Cleaned data was successfully saved!")
 
 
-# In[1]:
+# In[2]:
 
 
 # The .py format of the jupyter notebook

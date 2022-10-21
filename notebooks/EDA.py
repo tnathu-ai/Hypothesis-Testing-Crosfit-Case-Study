@@ -53,7 +53,7 @@
 # 
 # <h1 style="color:#ffc0cb;font-size:70px;font-family:Georgia;text-align:center;"><strong>2. EDA</strong></h1>
 
-# In[2]:
+# In[73]:
 
 
 # Install a conda package in the current Jupyter kernel
@@ -78,6 +78,7 @@ from numpy import std
 # Modules for df visualization
 import seaborn as sns
 import matplotlib.pyplot as plt
+import statistics
 
 from wordcloud import WordCloud
 
@@ -106,7 +107,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-# In[3]:
+# In[74]:
 
 
 # check the version of the packages
@@ -115,7 +116,7 @@ print("Pandas version: ",pd.__version__)
 get_ipython().system(' python --version')
 
 
-# In[4]:
+# In[75]:
 
 
 # set the general path of the external df
@@ -125,7 +126,7 @@ external_df_path = os.path.join(os.path.pardir,'data','interim')
 df = os.path.join(external_df_path, 'cleaned_data.csv')
 
 
-# In[5]:
+# In[76]:
 
 
 # import dfset
@@ -151,30 +152,31 @@ print("The shape and df type of the ORGINAL df:", str(df.info()))
 df.head(3)
 
 
-# In[6]:
+# In[77]:
 
 
 # see the static of all numerical column
 df.describe().T
 
 
-# In[7]:
+# In[78]:
 
 
 # Number of Unique Athlete
 print(df.athlete_id.nunique() == df.shape[0])
+
 # Summary Stats: weight
 df.describe([0.01, 0.05, 0.10, 0.20, 0.80, 0.90, 0.95, 0.99])[["weight"]].T
 
 
-# In[8]:
+# In[79]:
 
 
 # Groups & Target Summary Stats
 df.groupby("gender").weight.agg(["count", "median", "mean", "std", "max"])
 
 
-# In[9]:
+# In[80]:
 
 
 def visualize_word(col_name):
@@ -186,13 +188,13 @@ def visualize_word(col_name):
     plt.show()
 
 
-# In[10]:
+# In[81]:
 
 
 visualize_word('eat')
 
 
-# In[11]:
+# In[82]:
 
 
 # histogram average weight between athele male and female
@@ -212,7 +214,7 @@ fig.show()
 # * Strength of the relationship between two variables
 # * Lets look at correlation between all features.
 
-# In[12]:
+# In[84]:
 
 
 f,ax=plt.subplots(figsize = (20,20))
@@ -230,7 +232,7 @@ plt.show()
 # 
 # + There is **multicollinearity** (Mulitple independent variables are highly correlated) between attributes. If I want to feed these feature into my multiple regression model, I would need to drop 1 of the column that is strongly correlated with each other to prevent statistical insignificant problem
 
-# In[13]:
+# In[85]:
 
 
 #  Groups & Target Summary Stats
@@ -243,7 +245,7 @@ df.groupby("gender").weight.agg(["count", "median", "mean", "std", "max"])
 # * Most common way to represent distribution of varible is histogram that is graph which shows frequency of each value.
 # * Frequency = number of times each value appears
 
-# In[17]:
+# In[86]:
 
 
 female = plt.hist(df[df["gender"] == "female"].weight,bins=30,label = "female", color="pink")
@@ -272,27 +274,24 @@ print("Most frequent male weight mean is: ",most_frequent_male_weight_mean)
 # ### Randomly select a 10 number of rows from a dataframe
 # 
 
-# In[18]:
+# In[87]:
 
 
 df2 = df.sample(n=10, random_state=42)
 df2.head(3)
 
 
-# In[20]:
+# In[88]:
 
 
 # convert specified column in the dataframe into series
-from numpy import mean
-from numpy import std
-
 population_weight = df['weight'].squeeze()
 print('Population mean=%.3f stdv=%.3f' % (mean(population_weight), std(population_weight)))
 sample_weight = df2['weight'].squeeze()
 print('Sample mean=%.3f stdv=%.3f' % (mean(sample_weight), std(sample_weight)))
 
 
-# In[21]:
+# In[89]:
 
 
 # Distribution of population weight
@@ -301,7 +300,7 @@ sns.distplot(population_weight,color = 'pink')
 plt.savefig('pop_distplot.png')
 
 
-# In[17]:
+# In[90]:
 
 
 # Distribution of sample weight
@@ -332,7 +331,7 @@ plt.savefig('sample_distplot.png')
 # At α=0.05. If the p-value is >0.05, it can be said that the mean weight is normally distributed.
 # 
 
-# In[22]:
+# In[91]:
 
 
 from scipy import stats
@@ -360,7 +359,7 @@ plt.show()
 
 # # Shapiro-Wilk Test
 
-# In[64]:
+# In[92]:
 
 
 def check_normality_ShapiroWilk(data, data_name):
@@ -377,7 +376,7 @@ def check_normality_ShapiroWilk(data, data_name):
     print(f"\n\n")
 
 
-# In[65]:
+# In[93]:
 
 
 check_normality_ShapiroWilk(population_weight, "population_weight")
@@ -400,7 +399,7 @@ check_normality_ShapiroWilk(df[df["gender"] == "male"].weight, "male weight")
 
 # # Check homogeneity of variance using Levene’s test
 
-# In[66]:
+# In[94]:
 
 
 def check_variance_homogeneity_Levene(group1, group2, group1_name, group2_name):
@@ -427,7 +426,7 @@ check_variance_homogeneity_Levene(population_weight, sample_weight, "population 
 # 
 # # T-Sample Test
 
-# In[23]:
+# In[95]:
 
 
 ttest,p_value = stats.ttest_ind(np.array(population_weight).astype(int), np.array(sample_weight).astype(int))
@@ -444,21 +443,21 @@ else:
 # A one-sample t-test checks whether a sample mean differs from the population mean.
 # 
 
-# In[24]:
+# In[96]:
 
 
 import scipy.stats as stats
 import math
 
 
-# In[25]:
+# In[97]:
 
 
 print( population_weight.mean() )
 print( sample_weight.mean() )
 
 
-# In[26]:
+# In[98]:
 
 
 # cast population_weight and sample_weight as numeric values
@@ -466,7 +465,7 @@ population_weight = population_weight.astype(float)
 sample_weight = sample_weight.astype(float)
 
 
-# In[27]:
+# In[99]:
 
 
 stats.ttest_1samp(a = sample_weight,               # Sample data
@@ -475,7 +474,7 @@ stats.ttest_1samp(a = sample_weight,               # Sample data
 
 # # Find T Critical to the Rejection region
 
-# In[70]:
+# In[100]:
 
 
 lower_tail_quantile_to_check = 0.025
@@ -496,7 +495,7 @@ print(f"The Lower Tail rejection region is: (-∞, {lower_tail}]"
 
 # In this case, the p-value is higher than our significance level α (0.05), so we should reject the null hypothesis. If we were to construct a 95% confidence interval for the sample, it captures a population mean of 180.638
 
-# In[30]:
+# In[101]:
 
 
 sigma = sample_weight.std()/math.sqrt(10)  # Sample stdev/sample size
@@ -509,7 +508,7 @@ stats.t.interval(0.95,                        # Confidence level
 
 # On the other hand, it is not significant at the 80% confidence level. This means if we were to construct a 80% confidence interval, it even would not capture the population mean:
 
-# In[31]:
+# In[102]:
 
 
 stats.t.interval(alpha = 0.8,                # Confidence level
@@ -520,7 +519,7 @@ stats.t.interval(alpha = 0.8,                # Confidence level
 
 # # Calculate Z score for mean weight of different gender
 
-# In[32]:
+# In[103]:
 
 
 # selecting rows based on condition
@@ -529,7 +528,7 @@ female_weight = df[df['gender'] == 'female']
 df.gender.unique()
 
 
-# In[33]:
+# In[104]:
 
 
 # Import statistics Library
@@ -543,7 +542,7 @@ sample_std_male = statistics.stdev(male_weight_sample.weight)
 print("Sample Male Standard Deviation: "+str(sample_std_male))
 
 
-# In[34]:
+# In[105]:
 
 
 print("Population female Mean: "+str(female_weight['weight'].mean()))
@@ -554,18 +553,23 @@ sample_std_female = statistics.stdev(female_weight_sample.weight)
 print("Sample female Standard Deviation: "+str(sample_std_female))
 
 
-# In[35]:
+# In[106]:
 
 
 import math
 # Confidence Level 95 %  for one sided Normal curve
 zscore_critical = 1.65
 # Calculate the test statistics
-zscore_test_stat = ((sample_mean_male - sample_mean_female)*math.sqrt(8916))/sample_std_female
+zscore_test_stat = ((sample_mean_male - sample_mean_female)
+                    *math.sqrt(8916))/sample_std_female
 print(zscore_test_stat)
 
 
-# In[ ]:
+# ### -------> OBSERVATIONS:
+# 
+# We find out how many standard deviations you are from the mean by looking at the z-value. we have a z-score of large positive number indicates that a greater raw score than the mean average.
+
+# In[107]:
 
 
 # make the dataframe one-dimensional
@@ -577,7 +581,7 @@ female_weight = female_weight['weight']
 # <h1 style="color:#ffc0cb;font-size:40px;font-family:Georgia;text-align:center;"><strong>Single Variance</strong></h1>
 # 
 
-# In[ ]:
+# In[108]:
 
 
 # # generate two independent samples
@@ -587,7 +591,7 @@ female_weight = female_weight['weight']
 
 # # Confidence Invertal
 
-# In[60]:
+# In[109]:
 
 
 # Find the Chi-Square Critical Value
@@ -604,7 +608,7 @@ print(f'The critical value X²U for the upper tail is {scipy.stats.chi2.ppf(1-al
 print(f'The critical value X²L for the lower tail is {scipy.stats.chi2.ppf(alpha, df=dof)}') # 12.4011
 
 
-# In[43]:
+# In[110]:
 
 
 data = [*[df['score'][df['region'] == region] for region in df.region.unique()]]
@@ -623,7 +627,7 @@ plt.ylabel("Score", fontsize= 30)
 # bolden the labels
 plt.xticks(fontweight= 'bold')
 plt.yticks(fontweight= 'bold')
-
+plt.savefig('box_plot_score_by_regions.png')
 plt.show()
 
 
@@ -667,7 +671,7 @@ plt.show()
 # |    **Total**     |  n-1   | SST    |                 |          |                     |
 # 
 
-# In[44]:
+# In[111]:
 
 
 # generate a boxplot to see the data Distribution of scores by region. Using boxplot, we can
@@ -681,6 +685,7 @@ ax = sns.swarmplot(x="region", y="score", data=df, color='#7d0013')
 
 # set title with matplotlib
 plt.title('Distribution of scores by region')
+plt.savefig('boxplot_distribution_scores_by_regions.png')
 plt.show()
 
 
@@ -706,6 +711,8 @@ print(f'NUMBER OF CATEGORIES: {df.region.nunique()}; \n\nUNIQUE NAMES OF THE CAT
 
 # # F Critical Value
 # 
+# test 2 variances
+# 
 # `scipy.stats.f.ppf(q, dfn, dfd)`
 # 
 # where:
@@ -713,7 +720,7 @@ print(f'NUMBER OF CATEGORIES: {df.region.nunique()}; \n\nUNIQUE NAMES OF THE CAT
 # `q`: The significance level to use
 # `dfn`: The numerator degrees of freedom
 # `dfd`: The denominator degrees of freedom
-
+# 
 # 
 # 
 # 
@@ -727,7 +734,7 @@ print(f'NUMBER OF CATEGORIES: {df.region.nunique()}; \n\nUNIQUE NAMES OF THE CAT
 # and chosen α value, that is find Fα,k−1,n−k.
 # 4. Reject or Don’t Reject If the test statistic F falls in the rejection region, reject H0 and conclude H1 is true, or else do not reject H0. You should also interpret the result in words.
 
-# In[48]:
+# In[112]:
 
 
 # ONE-WAY ANOVA USING SCIPY.STATS
@@ -739,20 +746,18 @@ stats.f_oneway(*[df['score'][df['region'] == region] for region in df.region.uni
 # ### ----------> OBSERVATION:
 # F statistic is higher than our alpha => we fail to reject the H0
 
-# In[100]:
+# In[115]:
 
 
 import scipy.stats
 
 data1 = df.weight.sample(25).to_numpy(dtype=int)
 data2 = df.score.sample(25).to_numpy(dtype=int)
-data3 = df.height.sample(25).to_numpy(dtype=int)
 
 # number of values in all groups
-n = len(data1) + len(data2) + len(data3)
-
+n = len(data1) + len(data2)
 # number of groups
-k = 3
+k = 2
 
 # significance level
 q = 1-.05
@@ -768,18 +773,18 @@ print(f'Number of values in all {k} groups: n={n}')
 print(f'F critical value: {scipy.stats.f.ppf(q=q, dfn=dfn, dfd=dfd)}')
 
 
-# In[101]:
+# In[116]:
 
 
 from scipy.stats import f_oneway
 
 # Conduct the one-way ANOVA
-f_oneway(data1, data2, data3)
+f_oneway(data1, data2)
 
 
 # ### -------> OBSERVATION
 # 
-# The purpose of this study was to test for a difference in score between the region. The overall average score was 189.291 95%. There is non statistically significant difference between the score, height, weight and their effects the scores, F= 189.291, p-value=2.1288517462948006e-29.
+# The purpose of this study was to test for a difference in score between the regions. There is non statistically significant difference between the score and weight and their effects the scores, Fstatistic = 219.99375286886274, p-value=1.49567284265338e-19.
 # 
 # As the p value significant, we reject the null hypothesis and conclude that they do not have equal variances.
 # 
@@ -821,6 +826,8 @@ else:
 # <a id="1"></a>
 # <h1 style="color:#ffc0cb;font-size:40px;font-family:Georgia;text-align:center;"><strong>Mann-Whitney U test <br>(Wilcoxon Rank-Sum)</strong></h1>
 # 
+# Test for the mean of 2 group from unknown distributions
+# 
 # + 2 independent population
 # + non-parametric
 # 
@@ -852,6 +859,10 @@ else:
     print('Different distribution. Therefore, we reject the H0)')
 
 
+# ### ----> OBSERVATION:
+# 
+# Since the p value is less than the α = 0.05 we reject H0 and conclude that the weight between male and female are not the same.
+
 # <h1 style="color:#ffc0cb;font-size:40px;font-family:Georgia;text-align:center;"><strong>Kruskal Wallis test</strong></h1>
 # 
 # 
@@ -861,6 +872,7 @@ else:
 # 3. All the populations being sampled have the same shaped probability density function, with possibly different means.
 # 4. The populations are independent.
 # 
+# Hypothesis Testing
 # H0 : μ1 =μ2 =μ3 =···=μk
 # H1 : at least two μi differ.
 # 
@@ -890,20 +902,11 @@ result = stats.kruskal(*[df['score'][df['region'] == region] for region in df.re
 print(result)
 
 
-# In[54]:
-
-
-group1 = [624, 680, 454, 510, 539]
-group2 = [425, 595, 737, 459, 709, 482]
-group3 = [397, 794, 595, 539, 680, 652]
-group4 = [482, 510, 369, 567, 595]
-
-
-from scipy import stats
-
-#perform Kruskal-Wallis Test
-stats.kruskal(group1, group2, group3, group4)
-
+# ### OBSERVATIONS
+# 
+# The critical value X²U for the upper tail rejection region is 11.344866730144373
+# , using 3 degrees of freedom, so the rejection region is [ 11.34, ∞). Since the test statistic = 21.644331786306708 which is much larger than 11.34 falls in the rejection region, we reject the null hypothesis. There is evidence to indicate that the three means are not all the same.
+# 
 
 # <h1 style="color:#ffc0cb;font-size:40px;font-family:Georgia;text-align:center;"><strong>Chi Square Goodness of Fit test</strong></h1>
 # 
@@ -963,7 +966,7 @@ print(stats.chi2.ppf(1-alpha, df=degree_freedom))
 # <h1 style="color:#ffc0cb;font-size:40px;font-family:Georgia;text-align:center;"><strong>Chi Square Test for Independence</strong></h1>
 # 
 # 
-# ### χ^2 test of independence assumptions
+# ### X² test of independence assumptions
 # + The two samples are independent
 # + No expected cell count is = 0
 # + No more than 20% of the cells have and expected cell count < 5

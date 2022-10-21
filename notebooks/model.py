@@ -127,7 +127,6 @@ df.head(3)
 
 
 df = df.drop('athlete_id',axis=1)
-# drop high colin
 # select numeric columns
 df = df.select_dtypes(include=[np.number])
 df.sample(3)
