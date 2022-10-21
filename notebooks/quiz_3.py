@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# + One way Analysis of Variance (ANOVA) -  learnt in Week 7
-# + Kruskal Wallis test - learnt in Week 8
-# + Chi Square Goodness of Fit test - learnt in Week 9/10
-# + Chi Square Tests for Independence / Association Test - learnt in Week 9/10
+# + One way Analysis of Variance (ANOVA)
+# + Kruskal Wallis test
+# + Chi Square Goodness of Fit test
+# + Chi Square Tests for Independence / Association Test
 
-# In[1]:
+# In[19]:
 
 
 # import libraries
@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import researchpy as rp
-from scipy.stats import stats
+from scipy import stats
 
 
 # In[36]:
@@ -64,29 +64,6 @@ df.head(3)
 # ## -------> OBSERVATION
 # The Levene's test of homogeneity of variances is not significant which indicates that the groups have non-statistically significant difference in their varability. Again, it may be worthwhile to check this assumption visually as well.
 
-# In[45]:
-
-
-data = [*[df['score'][df['region'] == region] for region in df.region.unique()]]
-
-fig = plt.figure(figsize=(30, 15))
-ax = fig.add_subplot(111)
-ax.set_title("Box Plot of Score by Regions", fontsize=40)
-ax.set
-
-ax.boxplot(data,
-           labels=[region for region in df.region.unique()],
-           showmeans=True)
-
-plt.xlabel("Regions", fontsize=30)
-plt.ylabel("Score", fontsize=30)
-# bolden the labels
-plt.xticks(fontweight='bold')
-plt.yticks(fontweight='bold')
-
-plt.show()
-
-
 # ### ------> OBSERVATIONS
 # The graphical testing of homogeneity of variances supports the statistical testing findings which is the groups have equal variance.
 # 
@@ -121,49 +98,59 @@ plt.show()
 # ## Questions?
 # + Imbalance label problem (unequal sample size for each group) data
 # 
+# # ANOVA TABLE
 # 
-# | **ANOVA Source** | **df** | **SS** | **MS**          | **F**    | **Notes**           |
-# |:----------------:|:------:|:------:|:---------------:|:--------:|:-------------------:|
-# | **Treatments**   |  k-1   | SSTr   | MSTr=SSTr/(k-1) | MSTr/MSE | k: number of groups |
-# | **Errors**       |  n-k   | SSE    | MSE=SSE/(n-k)   |          | n: sample size      |
-# | **Total**        |  n-1   | SST    |                 |          |                     |
+# | **ANOVA Source** |   **df**   | **SS** | **MS**          | **F**    | **Notes**           |
+# |:----------------:|:----------:|:------:|:---------------:|:--------:|:-------------------:|
+# |  **Treatments**  | dfTr = k-1 |  SSTr  | MSTr=SSTr/(k-1) | MSTr/MSE | k: number of groups |
+# |    **Errors**    | dfE = n-k  | SSE    | MSE=SSE/(n-k)   |          | n: sample size      |
+# |    **Total**     | dfT = n-1  | SST    |                 |          |                     |
 # 
 
-# In[5]:
+# In[ ]:
 
 
-# generate a boxplot to see the data Distribution of scores by region. Using boxplot, we can
-# easily detect the differences between different regions
-import matplotlib.pyplot as plt
-import seaborn as sns
+k = 0
+n = 0
+dfTr = 0
+dfE = 0
+dfT = 0
+SSTr = 0
+SSE = 0
+SST = 0
+MSTr = 0
+MSE = 0
+F = 0
+p = 0
 
-# set with and height of the figure
-plt.figure(figsize=(24, 8))
-ax = sns.boxplot(x='region', y='score', data=df, color='#99c2a2')
-ax = sns.swarmplot(x="region", y="score", data=df, color='#7d0013')
-# set title with matplotlib
-plt.title('Distribution of scores by region')
-plt.show()
-
-
-# In[6]:
-
-
-rp.summary_cont(df['score'])
-
-
-# In[7]:
-
-
-df['score'] = np.array(df['score'], dtype='float64')
-
-rp.summary_cont(df['score'].groupby(df['region']))
+dfTr = k - 1
+dfE = n - k
+dfT = n - 1
+SSTr = SST - SSE
+MSTr = SSTr / dfTr
+MSE = SSE / dfE
+SST = SSTr + SSE
+F = MSTr / MSE
+p = stats.f.sf(F, dfTr, dfE)
 
 
-# In[8]:
+# In[22]:
 
 
-print(f'NUMBER OF CATEGORIES: {df.region.nunique()}; \n\nUNIQUE NAMES OF THE CATEGORIES {df.region.unique()}\n\n\n')
+n = 18
+k = 3
+dfT = 17
+SSTr = 57.11
+SST = 73.75
+
+dfTr = k - 1
+dfE = n - k
+MSTr = SSTr / dfTr
+SSE = SST - SSTr
+MSE = SSE / dfE
+F = MSTr / MSE
+p = stats.f.sf(F, dfTr, dfE)
+print("F value: ", F and "p value: ", p)
 
 
 # # F Critical Value
@@ -186,43 +173,33 @@ print(f'NUMBER OF CATEGORIES: {df.region.nunique()}; \n\nUNIQUE NAMES OF THE CAT
 # 2. Next calculate the test statistic F using the data and present it in a
 # table as above.
 # 3. Find the Rejection region for the corresponding alternate hypothesis
-# and chosen α value, that is find Fα,k−1,n−k.
+# and chosen α value, that is find Fα,k−1,n−k. **The rejection area is in the right hand side of the critical value.
 # 4. Reject or Don’t Reject If the test statistic F falls in the rejection region, reject H0 and conclude H1 is true, or else do not reject H0. You should also interpret the result in words.
 
-# In[9]:
-
-
-# ONE-WAY ANOVA USING SCIPY.STATS
-
-# calculate f_oneway by looping through unique regions
-stats.f_oneway(*[df['score'][df['region'] == region] for region in df.region.unique()])
-
-
-# # 1.
-# 
-# You want to compare the cleaning action of 7 detergents using a one-way analysis of variance.
-# You cut 31 strips of dirty cloth and randomly assign (wash) each strip with one of the detergents.
-# You then measure their whiteness with a reflectance meter.
-# How many degrees of freedom does the sum of squares total have?
-
-# In[72]:
+# In[7]:
 
 
 import scipy.stats
 
 # F0.05,2,12 = 3.89
-# number of values in all groups
-n = 31
+# sample size
+n = 18
 # number of groups
-k = 7
+k = 3
 # significance level
 q = 1 - .05
+
 # numerator degrees of freedom
 dfn = k - 1
-print(dfn)
+print(f'Numerator df v1: {dfn}')
+
 # denominator degrees of freedom
 dfd = n - k
-print(dfd)
+print(f'Denominator df v2: {dfd}')
+
+# F critical value
+print(f'The critical value from F-table: F({q}, {k-1}, {n-k}) = {scipy.stats.f.ppf(q, k-1, n-k)}')
+
 #find F critical value
 print(f'F critical value: {scipy.stats.f.ppf(q=q, dfn=dfn, dfd=dfd)}')
 
@@ -233,7 +210,6 @@ print(f'F critical value: {scipy.stats.f.ppf(q=q, dfn=dfn, dfd=dfd)}')
 import scipy.stats
 
 # F0.05,2,12 = 3.89
-
 
 performance1 = [8, 9, 11, 10, 11, 9, 10, 10]
 performance2 = [13, 10, 9, 10, 11, 8, 14, 13]
@@ -548,7 +524,7 @@ else:
 # ## --------> OBSERVATION
 # The one piece of information that researchpy calculates that scipy.stats does not is a measure of the strength of the relationship - this is akin to a correlation statistic such as Pearson's correlation coefficient. A good peer-reviewed article that is not behind a paywall is written by Akoglu (2018). The following table is reproduced from the mentioned article.
 
-# In[19]:
+# In[9]:
 
 
 # The .py format of the jupyter notebook

@@ -61,9 +61,14 @@
 # 
 # equivalent of the paired Student T-test, but for ranked data instead of real valued data with a Gaussian distribution.
 # 
-# 
 # + Fail to Reject H0: Sample distributions are equal.
 # + Reject H0: Sample distributions are not equal.
+# 
+# **General Case:**
+# Subtract D from each data. Take the absolute values. Rank them. Multiply by the signs. These are the signed ranks. Then
+# S+ = sum of the positive ranks.
+# + H₀: μ = D
+# + H₁: μ ≠ D
 
 # In[2]:
 
@@ -93,30 +98,36 @@ else:
 # 
 # The Mann-Whitney U test is a nonparametric statistical significance test for determining whether two independent samples were drawn from a population with the same distribution
 # 
-# + Fail to Reject H0: Sample distributions are equal.
-# + Reject H0: Sample distributions are not equal.
+# 1. State the hypothesis and select alpha
+# 2. Compute the test statistic (W)
+# > + Choose the sample with the fewest number size as m and other as n
+# > + Sort the data (don't remove 0 value and don't take modulus if the value is negative)
+# > + Give rank (smallest -> largest)
+# > + Test statistic W = sum of the rank
+# 3. Use the Wilcoxon Rank-Sum table to find the W-critical and the rejection region
+# 4. Conclusion:
+# > + Fail to Reject H0: Sample distributions are equal.
+# > + Reject H0: Sample distributions are not equal.
+# 
+# 
 
-# In[40]:
+# In[7]:
 
 
 # Mann-Whitney U test
-from numpy.random import seed
-from numpy.random import randn
 from scipy.stats import mannwhitneyu
-# seed the random number generator
-seed(1)
 # generate two independent samples
-data1 = 5 * randn(100) + 50
-data2 = 5 * randn(100) + 51
-# compare samples
-stat, p = mannwhitneyu(data1, data2)
+data1 = [24.12, 21.8, 23.85, 36.27, 28.88]
+data2 = [23.42, 25.78, 26.54, 27.71, 23.47, 36.99]
+# compare samples. Perform 'two-sided' test. You can use 'greater' or 'less' for one-sided test
+stat, p = mannwhitneyu(data1, data2, alternative = 'two-sided')
 print('Statistics=%.3f, p=%.3f' % (stat, p))
 # interpret
 alpha = 0.05
 if p > alpha:
-    print('Same distribution (fail to reject H0)')
+    print(f'Same distribution (fail to reject H0). The p value: {p}')
 else:
-    print('Different distribution (reject H0)')
+    print(f'Different distribution (reject H0). The p value: {p}')
 
 
 # <a id="1"></a>
@@ -215,10 +226,29 @@ print(f'The critical value X²L for the lower tail is {scipy.stats.chi2.ppf(alph
 # Now for α = 0.05 we want an area of 0.025 in each of the upper and lower tails. Looking up the χ2 distribution with α = 0.025 and df = 23 − 1 = 22 we get χ2U = 36.7807. Similarly looking up the χ2 distribution with α = 0.975 and df =23−1=22 we get χ2L =10.9823.
 # Substituting these into the confidence interval gives
 
-# In[43]:
+# In[15]:
 
 
-
+# confidence interval for the variance
+from scipy.stats import chi2
+# define confidence
+conf = 0.95
+# sample size
+n = 30
+# define degrees of freedom
+df = n - 1
+# sample variance
+s2 = 3.4
+# retrieve value <= probability
+p = (1.0 - conf) / 2
+# retrieve value <= probability
+chi2L = chi2.ppf(p, df)
+# retrieve value >= probability
+chi2U = chi2.ppf(1 - p, df)
+# calculate the interval
+interval = (df * s2 / chi2U, df * s2 / chi2L)
+print(f'The Confidence Interval {interval}') # (0.000, 0.000)
+print('%.3f, %.3f' % interval) # 0.000, 9.000
 
 
 # <a id="1"></a>
@@ -257,12 +287,17 @@ print(f'The critical value X²L for the lower tail is {scipy.stats.chi2.ppf(alph
 
 
 
+# 
+
+# 
+
 # # References
 # 
 # + [Non parametric statistical significance test in Python](https://machinelearningmastery.com/nonparametric-statistical-significance-tests-in-python/)
 # + [p value Calculation Python](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html)
 # + [Chi-Square Distribution Python](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2.html)
 # + [Chi-squared distribution table from Probability and Statistics by Jay L. Devore.]()
+# + https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wilcoxon.html
 
 # In[43]:
 
