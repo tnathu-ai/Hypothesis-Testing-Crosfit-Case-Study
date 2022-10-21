@@ -4,6 +4,13 @@
 # # Linear Regression
 # 
 # # Find n, Σy, Σx, Σxy, Σx^2 , Σy^2
+# n: the number of data points
+# Σy: the sum of the y values
+# Σx: the sum of the x values
+# Σxy: the sum of the products of the x and y values
+# Σx^2: the sum of the squares of the x values
+# Σy^2: the sum of the squares of the y values
+
 
 # In[19]:
 
@@ -68,7 +75,10 @@ df
 
 
 # # Find Sxy, Sxx, Syy
-# 
+# Sxy: the sample covariance of x and y
+# Sxx: the sample variance of x
+# Syy: the sample variance of y
+
 
 # In[21]:
 
@@ -93,7 +103,12 @@ print(f'b1 = {b1}, b0 = {b0}\nThe regression equation is y = {b0} + ({b1}x)')
 
 
 # # Find SSTO, SSR, SSE, R2, and R
-# 
+# SSTO: Total Sum of Squares
+# SSR: Regression Sum of Squares
+# SSE: Error Sum of Squares
+# R2: Coefficient of Determination
+# R: Correlation Coefficient
+
 # 
 
 # In[32]:
