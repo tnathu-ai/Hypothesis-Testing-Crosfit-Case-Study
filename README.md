@@ -1,4 +1,4 @@
-# A comprehensive guide to perform hypothesis tests and find confidence interval, degrees of freedom, critical value, test statistic
+### A comprehensive guide to perform hypothesis tests and find confidence interval, degrees of freedom, critical value, test statistic
 
 ![tree map for summary](media/images/hypothesis-testing.png)
 
