@@ -1,5 +1,9 @@
 ### A comprehensive guide to perform hypothesis tests and find confidence interval, degrees of freedom, critical value, test statistic
 
+<p align="center">
+<a href="https://tnathu-ai.medium.com/parametric-and-non-parametric-tests-case-study-in-python-1b647c1df3af" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@tnathu-ai" height="30" width="40" /></a>
+</p>
+
 ![tree map for summary](media/images/hypothesis-testing.png)
 
 # Open Discussion
