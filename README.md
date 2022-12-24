@@ -7,11 +7,11 @@
 ![tree map for summary](media/images/hypothesis-testing.png)
 
 # Data analysis
-1. Descriptive analysis
-2. Exploratory analysis
-3. Inferential analysis
-4. Causal analysis
-5. Predictive analysis
+1. **Descriptive analysis:** Descriptive analysis describes major patterns in data through summary statistics and visualization of measures of central tendency and spread.
+2. **Exploratory analysis:** Exploratory analysis explores relationships between variables within a dataset and can group subsets of data. Exploratory analyses might reveal correlations between variables.
+3. **Inferential analysis:** Inferential analysis allows us to test hypotheses on a small sample of a population and extend our conclusions to the entire population.
+4. **Causal analysis:** Causal analysis lets us go beyond correlation and actually assign causation when we carefully design and conduct experiments. In addition, causal inference sometimes allows us to determine causal effects even when experimentation is not possible.
+5. **Predictive analysis:** goes beyond understanding the past and present and allows us to make data-driven predictions about the future. The quality of these predictions is deeply dependent on the quality of the data used to generate the predictions.
 
 
 # Hypothesis Testing Steps
