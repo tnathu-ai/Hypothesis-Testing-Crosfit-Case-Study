@@ -6,6 +6,14 @@
 
 ![tree map for summary](media/images/hypothesis-testing.png)
 
+# Data analysis
+1. Descriptive analysis
+2. Exploratory analysis
+3. Inferential analysis
+4. Causal analysis
+5. Predictive analysis
+
+
 # Hypothesis Testing Steps
 1. Hypotheses: null hypothesis & alternative hypothesis
 2. Statistical significance (alpha level α)
