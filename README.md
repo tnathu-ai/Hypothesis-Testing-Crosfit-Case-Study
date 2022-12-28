@@ -6,6 +6,12 @@
 
 ![tree map for summary](media/images/hypothesis-testing.png)
 
+# Clean data
+1. Inspect
+2. Repair
+3. Validate
+4. Document
+
 # Data analysis
 1. **Descriptive analysis:** Descriptive analysis describes major patterns in data through summary statistics and visualization of measures of central tendency and spread.
 2. **Exploratory analysis:** Exploratory analysis explores relationships between variables within a dataset and can group subsets of data. Exploratory analyses might reveal correlations between variables.
