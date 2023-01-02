@@ -20,12 +20,16 @@
 5. **Predictive analysis:** goes beyond understanding the past and present and allows us to make data-driven predictions about the future. The quality of these predictions is deeply dependent on the quality of the data used to generate the predictions.
 
 
-# Hypothesis Testing Steps
-1. Hypotheses: null hypothesis & alternative hypothesis
-2. Statistical significance (alpha level α)
-3. Test Statistic
-4. Critical value
-5. Conclusion
+# Hypothesis Testing step-by-step
++ Step-by-step process for conducting hypothesis tests: null hypothesis & alternative hypothesis
++ The importance of representative samples when performing hypothesis tests.
++ Statistical significance (alpha level α) and p-value
++ Calculate the confidence interval of a sample with 95% confidence (α = 0.05) that it is reflective of the true population.
++ The theory behind the central limit theorem and a clear example.
++ Test Statistic
++ Critical value
++ Conclusion
+
 
 
 # Open Discussion
