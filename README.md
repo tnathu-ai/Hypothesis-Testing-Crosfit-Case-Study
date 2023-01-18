@@ -20,6 +20,7 @@
 5. **Predictive analysis:** goes beyond understanding the past and present and allows us to make data-driven predictions about the future. The quality of these predictions is deeply dependent on the quality of the data used to generate the predictions.
 
 # Visualization
+
 • Comparison and distribution
     - Bar charts (several assorted variants)
 • Changes over time
