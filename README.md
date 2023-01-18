@@ -19,6 +19,23 @@
 4. **Causal analysis:** Causal analysis lets us go beyond correlation and actually assign causation when we carefully design and conduct experiments. In addition, causal inference sometimes allows us to determine causal effects even when experimentation is not possible.
 5. **Predictive analysis:** goes beyond understanding the past and present and allows us to make data-driven predictions about the future. The quality of these predictions is deeply dependent on the quality of the data used to generate the predictions.
 
+# Visualization
+• Comparison and distribution
+    - Bar charts (several assorted variants)
+• Changes over time
+    - Line graphs
+    - Area charts
+• Correlation
+    - Scatter plots
+    - Heat maps
+• Aggregation
+    - Pie graphs
+    - Tree maps
+• Tabular
+    - Pivot tables
+
+
+
 
 # Hypothesis Testing step-by-step
 + Step-by-step process for conducting hypothesis tests: null hypothesis & alternative hypothesis
