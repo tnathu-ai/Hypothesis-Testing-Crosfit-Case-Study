@@ -23,15 +23,19 @@
 
 • Comparison and distribution
     - Bar charts (several assorted variants)
+    
 • Changes over time
     - Line graphs
     - Area charts
+    
 • Correlation
     - Scatter plots
     - Heat maps
+    
 • Aggregation
     - Pie graphs
     - Tree maps
+    
 • Tabular
     - Pivot tables
 
