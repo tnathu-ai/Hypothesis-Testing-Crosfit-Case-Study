@@ -14,7 +14,7 @@
 
 # Data analysis
 
-![tree map for summary](media/images/Data analysis Steps.png)
+![tree map for summary](media/images/data-analysis-steps.png)
 
 # Visualization
 
