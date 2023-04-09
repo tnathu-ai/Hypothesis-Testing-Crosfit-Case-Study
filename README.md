@@ -55,7 +55,18 @@
 
 
 # Open Discussion
-+ Non-parametric hypothesis test has the assumption of a continuous and symmetric distribution's mean(median)
+
++ **Non-parametric hypothesis test has the assumption of a continuous and symmetric distribution's mean(median)?**
 
 Regardless of The central limit theorem states that the distribution of sample means equal to or greater than 30 are often considered sufficient for the normal distribution. What if my distribution does not assume I am sampling from a particular distribution and is either continuous or symmetric about the mean (e.g. skewed distribution)? What type of hypothesis testing should I use?
+
+
++ **Multiple t-test?**
+
+Performing multiple t-tests can lead to an increased chance of making a Type I error, which is the incorrect rejection of a true null hypothesis. This is also known as a false positive result. The probability of making a Type I error increases with the number of tests performed. In this case, if you perform three t-tests (one for each pair of stores), then the probability of making at least one Type I error is 0.143, or 14.3%, which is higher than the usual significance level of 0.05.
+
+To address this issue, you can use a statistical test called ANOVA (analysis of variance), which compares the means of multiple groups simultaneously. ANOVA is more appropriate when you have multiple groups to compare, as it can help control for the overall probability of a Type I error. If the ANOVA result is significant, you can then perform post-hoc tests to determine which groups differ significantly from each other.
+
+In summary, performing multiple t-tests can increase the chance of making a Type I error. To avoid this issue, you can use ANOVA to test for differences between multiple groups, followed by post-hoc tests to determine which groups differ significantly from each other.
+
 
